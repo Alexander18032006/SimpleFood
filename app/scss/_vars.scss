@@ -1,3 +1,5 @@
+$orange: #FF6838;
+$orange-tr: rgba(#FF6838, 0.7);
 %rubik-400 {
 	font-family: 'Rubik-Regular';
 	font-weight: 400;
@@ -6,4 +8,9 @@
 %rubik-500 {
 	font-family: 'Rubik-Regular';
 	font-weight: 500;
+}
+
+%outline {
+	outline: 2px solid $orange-tr;
+	border-radius: 5px;
 }
