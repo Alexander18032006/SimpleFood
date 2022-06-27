@@ -1,6 +1,7 @@
 body {
 	background-color: #fff;
 	color: #000;
+	@extend %rubik-400;
 }
 ::selection {
 	background-color: transparent;
