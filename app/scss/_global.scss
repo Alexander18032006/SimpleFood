@@ -2,14 +2,34 @@ html {
 	font-size: 10px;
 }
 
+body,
+html {
+	height: 100%;
+}
+
 body {
 	background-color: $white;
 	color: $dark;
 	@extend %rubik-400;
 }
+
+.container {
+	max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	flex-grow: 1
+}
+
 ::selection {
 	background-color: $orange-7;
 }
+
 .sr-only {
 	position: absolute;
 	width: 1px;
@@ -21,10 +41,4 @@ body {
 	clip-path: inset(100%);
 	clip: rect(0 0 0 0);
 	overflow: hidden;
-}
-
-.container {
-	max-width: 1200px;
-	padding: 0 15px;
-	margin: 0 auto;
 }
