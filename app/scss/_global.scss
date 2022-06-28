@@ -3,12 +3,12 @@ html {
 }
 
 body {
-	background-color: #fff;
-	color: #000;
+	background-color: $white;
+	color: $dark;
 	@extend %rubik-400;
 }
 ::selection {
-	background-color: transparent;
+	background-color: $orange-7;
 }
 .sr-only {
 	position: absolute;

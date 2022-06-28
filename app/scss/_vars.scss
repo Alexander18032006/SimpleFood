@@ -1,5 +1,11 @@
 $orange: #FF6838;
-$orange-tr: rgba(#FF6838, 0.7);
+$orange-7: rgba(#FF6838, 0.7);
+$orange-1: rgba(#FF6838, 0.1);
+$dark: #31352b;
+$grey: #C2C2C2;
+$white: #FFF;
+$silver: #ECECEC;
+
 %rubik-400 {
 	font-family: 'Rubik-Regular';
 	font-weight: 400;
@@ -11,6 +17,19 @@ $orange-tr: rgba(#FF6838, 0.7);
 }
 
 %outline {
-	outline: 2px solid $orange-tr;
+	outline: 2px solid $orange-7;
 	border-radius: 5px;
+}
+
+%photo {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+@mixin photo($photo) {
+	background-image: url($photo);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
 }
