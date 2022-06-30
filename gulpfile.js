@@ -5,6 +5,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
+var notify = require("gulp-notify");
 const browserSync = require('browser-sync').create();
 
 function browsersync() {
@@ -18,7 +19,11 @@ function browsersync() {
 
 function style() {
 	return src('app/scss/style.scss')
-		.pipe(scss({ outputStyle: 'compressed' }))
+		.pipe(scss({ outputStyle: 'expanded' }).on('error', scss.logError))
+		.on('error', notify.onError({
+			title: 'Scss error',
+			message: "Reason: <%= error.message %>",
+		}))
 		.pipe(concat('style.min.css'))
 		.pipe(autoprefixer({
 			overrideBrowserslist: ['last 10 version'],
