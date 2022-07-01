@@ -21,8 +21,7 @@ function style() {
 	return src('app/scss/style.scss')
 		.pipe(scss({ outputStyle: 'expanded' }).on('error', scss.logError))
 		.on('error', notify.onError({
-			title: 'Scss error',
-			message: "Reason: <%= error.message %>",
+			title: 'Scss error'
 		}))
 		.pipe(concat('style.min.css'))
 		.pipe(autoprefixer({
