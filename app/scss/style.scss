@@ -35,7 +35,6 @@
 }
 
 .logo {
-	height: 39px;
 	transition: opacity 0.5s, outline 0.5s;
 
 	&:focus {
@@ -81,12 +80,13 @@
 
 	&__wrapper {
 		display: flex;
-		justify-content: space-between;
 	}
 
 	&__nav {
+		width: 100%;
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
 	}
 
 	&__list {
@@ -110,13 +110,13 @@
 		}
 	}
 
-	&__link {
+	&__btn {
 		display: block;
 		padding: 11px;
 		border-radius: 5px;
 		transition: background-color 0.5s, outline 0.5s;
 
-		svg {
+		.svg {
 			stroke: $dark;
 		}
 
@@ -129,9 +129,9 @@
 		&:hover {
 			background-color: $orange;
 
-			svg {
+			.svg {
 				transition: stroke 0.5s;
-				stroke: $white
+				stroke: $white;
 			}
 
 			.user-nav__num {
@@ -144,7 +144,7 @@
 		&:active {
 			background-color: $orange-1;
 
-			svg {
+			.svg {
 				transition: stroke 0.5s;
 				stroke: $dark;
 			}
@@ -157,7 +157,7 @@
 		}
 	}
 
-	&__link--cart {
+	&__btn--cart {
 		position: relative;
 	}
 
@@ -179,7 +179,7 @@
 .hero {
 	&__wrapper {
 		height: 61vh;
-		background-size: 48%;
+		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: right center;
 		display: flex;
@@ -257,12 +257,13 @@
 			background-color: $orange;
 			color: $white;
 
-			svg {
+			.svg {
+				transition: fill 0.5s;
 				fill: $white;
 			}
 		}
 
-		svg {
+		.svg {
 			margin-right: 10px;
 			fill: $dark;
 		}
@@ -278,7 +279,7 @@
 			color: $orange;
 			background-color: $orange-1;
 
-			svg {
+			.svg {
 				transition: fill 0.5s;
 				fill: $orange;
 			}
@@ -293,22 +294,15 @@
 .popular {
 	text-align: center;
 
+	&__title {
+		margin-bottom: 60px;
+	}
+
 	&__content {
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		grid-gap: 30px;
 		margin-bottom: 60px;
-	}
-
-	&__item {
-		background-color: $white;
-		border: 1px solid $silver;
-		border-radius: 5px;
-		transition: border 0.5s;
-
-		&:hover {
-			border-color: $orange;
-		}
 	}
 
 	&__link {
@@ -333,18 +327,26 @@
 	}
 }
 
-.product-cart {
+.product-card {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	justify-content: space-between;
 	height: 100%;
+	background-color: $white;
+	border: 1px solid $silver;
+	border-radius: 5px;
+	transition: border 0.5s;
 
-	&__img {
-		margin: 20px 0 7px;
+	&:hover {
+		border-color: $orange;
 	}
 
 	&__link {
+		padding: 20px 0 7px;
+	}
+
+	&__title {
 		margin-bottom: 16px;
 		font-size: 1.5rem;
 		line-height: 1.2;
@@ -418,7 +420,7 @@
 		transition: all 0.5s;
 		font-weight: 600;
 
-		svg {
+		.svg {
 			position: absolute;
 			top: 14px;
 			left: 38px;
@@ -432,7 +434,7 @@
 			outline: 2px solid $orange-7;
 			border-radius: 5px;
 
-			svg {
+			.svg {
 				transition: fill 0.5s;
 				fill: $orange;
 			}
@@ -444,7 +446,7 @@
 			outline: 2px solid $orange-7;
 			border-radius: 5px;
 
-			svg {
+			.svg {
 				transition: fill 0.5s;
 				fill: $orange;
 			}
@@ -455,7 +457,7 @@
 			outline-color: transparent;
 			color: $orange;
 
-			svg {
+			.svg {
 				transition: fill 0.5s;
 				fill: $orange;
 			}
@@ -506,15 +508,15 @@
 		}
 
 		&--location:before {
-			@include photo('../images/icons/location.svg');
+			@include photo('../images/icons/location..svg');
 		}
 
 		&--tel:before {
-			@include photo('../images/icons/phone.svg');
+			@include photo('../images/icons/phone..svg');
 		}
 
 		&--email:before {
-			@include photo('../images/icons/email.svg');
+			@include photo('../images/icons/email..svg');
 		}
 	}
 }
@@ -541,9 +543,18 @@
 		width: 100%;
 		transition: all 0.5s;
 
-		svg {
+		.svg {
+			transition: fill 0.5s;
 			fill: $dark;
 			@extend %photo;
+		}
+
+		&:hover,
+		&:active {
+			.svg {
+				transition: fill 0.5s;
+				fill: $white;
+			}
 		}
 
 		&:focus {
@@ -556,21 +567,11 @@
 		&:hover {
 			background-color: $orange;
 			outline-color: transparent;
-
-			svg {
-				transition: fill 0.5s;
-				fill: $white;
-			}
 		}
 
 		&:active {
 			background-color: $orange-7;
 			outline-color: transparent;
-
-			svg {
-				transition: fill 0.5s;
-				fill: $white;
-			}
 		}
 	}
 }
