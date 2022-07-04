@@ -6,8 +6,10 @@ const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
 var notify = require("gulp-notify");
+const svgSprite = require('gulp-svg-sprite');
+const cheerio = require('gulp-cheerio');
 const browserSync = require('browser-sync').create();
-
+const replace = require('gulp-replace');
 function browsersync() {
 	browserSync.init({
 		server: {
@@ -70,10 +72,34 @@ function images() {
 		]))
 		.pipe(dest('dist/images/'))
 }
+function svgSprites() {
+	return src('app/images/icons/*.svg')
+		.pipe(cheerio({
+			run: ($) => {
+				$("[fill]").removeAttr("fill");
+				$("[stroke]").removeAttr("stroke");
+				$("[style]").removeAttr("style");
+			},
+			parserOptions: { xmlMode: true },
+		})
+		)
+		.pipe(replace('&gt;', '>')) // боремся с заменой символа 
+		.pipe(
+			svgSprite({
+				mode: {
+					stack: {
+						sprite: '../sprite.svg',
+					},
+				},
+			})
+		)
+		.pipe(dest('app/images'));
+}
 function watching() {
 	watch(['app/scss/**/*.scss'], style);
-	watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts)
-	watch(['app/**/*.html']).on('change', browserSync.reload)
+	watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
+	watch(['app/**/*.html']).on('change', browserSync.reload);
+	watch(['app/images/icons-2/*.svg'], svgSprites);
 }
 
 exports.style = style;
@@ -82,6 +108,8 @@ exports.browsersync = browsersync;
 exports.images = images;
 exports.watching = watching;
 exports.cleanDist = cleanDist;
+exports.svgSprites = svgSprites;
 exports.build = series(cleanDist, images, build);
 
-exports.default = parallel(style, scripts, browsersync, watching);
+exports.default = parallel(style, scripts, browsersync, svgSprites, watching);
+

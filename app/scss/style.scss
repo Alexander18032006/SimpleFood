@@ -110,15 +110,18 @@
 		}
 	}
 
+	&__svg {
+		fill: transparent;
+		stroke: $dark;
+		width: 19px;
+		height: 19px;
+	}
+
 	&__btn {
 		display: block;
 		padding: 11px;
 		border-radius: 5px;
 		transition: background-color 0.5s, outline 0.5s;
-
-		.svg {
-			stroke: $dark;
-		}
 
 		&:focus {
 			background-color: $orange-1;
@@ -129,7 +132,7 @@
 		&:hover {
 			background-color: $orange;
 
-			.svg {
+			.user-nav__svg {
 				transition: stroke 0.5s;
 				stroke: $white;
 			}
@@ -144,7 +147,7 @@
 		&:active {
 			background-color: $orange-1;
 
-			.svg {
+			.user-nav__svg {
 				transition: stroke 0.5s;
 				stroke: $dark;
 			}
@@ -242,6 +245,13 @@
 		margin-right: 20px;
 	}
 
+	&__svg {
+		margin-right: 10px;
+		fill: $dark;
+		width: 44px;
+		height: 44px;
+	}
+
 	&__button {
 		padding: 15px 32px 15px 28px;
 		display: flex;
@@ -257,15 +267,10 @@
 			background-color: $orange;
 			color: $white;
 
-			.svg {
+			.filter__svg {
 				transition: fill 0.5s;
 				fill: $white;
 			}
-		}
-
-		.svg {
-			margin-right: 10px;
-			fill: $dark;
 		}
 
 		&:focus {
@@ -279,7 +284,7 @@
 			color: $orange;
 			background-color: $orange-1;
 
-			.svg {
+			.filter__svg {
 				transition: fill 0.5s;
 				fill: $orange;
 			}
@@ -386,6 +391,12 @@
 		margin-bottom: 15px;
 	}
 
+	&__svg {
+		width: 17px;
+		height: 16px;
+		fill: $white;
+	}
+
 	&__input {
 		padding: 13px 15px;
 		width: 100%;
@@ -420,7 +431,7 @@
 		transition: all 0.5s;
 		font-weight: 600;
 
-		.svg {
+		.footer__svg {
 			position: absolute;
 			top: 14px;
 			left: 38px;
@@ -434,7 +445,7 @@
 			outline: 2px solid $orange-7;
 			border-radius: 5px;
 
-			.svg {
+			.footer__svg {
 				transition: fill 0.5s;
 				fill: $orange;
 			}
@@ -446,7 +457,7 @@
 			outline: 2px solid $orange-7;
 			border-radius: 5px;
 
-			.svg {
+			.footer__svg {
 				transition: fill 0.5s;
 				fill: $orange;
 			}
@@ -457,7 +468,7 @@
 			outline-color: transparent;
 			color: $orange;
 
-			.svg {
+			.footer__svg {
 				transition: fill 0.5s;
 				fill: $orange;
 			}
@@ -465,8 +476,6 @@
 	}
 
 	&__list-link {
-		display: block;
-
 		&:not(:last-child) {
 			margin-bottom: 20px;
 		}
@@ -508,15 +517,15 @@
 		}
 
 		&--location:before {
-			@include photo('../images/icons/location..svg');
+			@include photo('../images/icons/location.svg');
 		}
 
 		&--tel:before {
-			@include photo('../images/icons/phone..svg');
+			@include photo('../images/icons/phone.svg');
 		}
 
 		&--email:before {
-			@include photo('../images/icons/email..svg');
+			@include photo('../images/icons/email.svg');
 		}
 	}
 }
@@ -533,6 +542,25 @@
 		}
 	}
 
+	&__svg {
+		fill: $dark;
+	}
+
+	.social__svg--facebook {
+		width: 9px;
+		height: 21px;
+	}
+
+	.social__svg--twitter {
+		width: 21px;
+		height: 17px;
+	}
+
+	.social__svg--instagram {
+		width: 19.5px;
+		height: 19.5px;
+	}
+
 	&__link {
 		background-color: $silver;
 		border-radius: 50%;
@@ -543,15 +571,9 @@
 		width: 100%;
 		transition: all 0.5s;
 
-		.svg {
-			transition: fill 0.5s;
-			fill: $dark;
-			@extend %photo;
-		}
-
 		&:hover,
 		&:active {
-			.svg {
+			.social__svg {
 				transition: fill 0.5s;
 				fill: $white;
 			}
