@@ -1,0 +1,25 @@
+.header {
+	padding: 60px 0 55px;
+
+	&__wrapper {
+		display: flex;
+	}
+
+	&__nav {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__list {
+		display: flex;
+		margin-right: 63px;
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-right: 40px;
+		}
+	}
+}

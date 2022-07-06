@@ -1,0 +1,122 @@
+.footer {
+	&__content {
+		display: flex;
+		padding-bottom: 60px;
+		justify-content: space-between;
+	}
+
+	&__wrapper {
+		margin-right: 70px;
+	}
+
+	&__list {
+		column-count: 3;
+	}
+
+	&__list-item {
+		margin-bottom: 15px;
+	}
+
+	&__svg {
+		width: 17px;
+		height: 16px;
+		fill: $white;
+	}
+
+	&__input {
+		padding: 13px 15px;
+		width: 100%;
+		border: 1px solid $grey;
+		display: block;
+		border-radius: 5px;
+		margin: 30px 0 12px;
+		transition: outline 0.5s;
+
+		&::placeholder {
+			color: $grey;
+			transition: color 0.5s;
+		}
+
+		&:focus {
+			outline: 2px solid $orange-7;
+			border-radius: 5px;
+		}
+
+		&:hover::placeholder {
+			color: $dark;
+		}
+	}
+
+	&__button {
+		width: 100%;
+		padding: 13px 39px 13px 71px;
+		background-color: $orange;
+		color: $white;
+		border-radius: 5px;
+		position: relative;
+		transition: all 0.5s;
+		font-weight: 600;
+
+		.footer__svg {
+			position: absolute;
+			top: 14px;
+			left: 38px;
+			@extend %photo;
+			fill: $white;
+		}
+
+		&:focus {
+			background-color: $orange-1;
+			color: $orange;
+			outline: 2px solid $orange-7;
+			border-radius: 5px;
+
+			.footer__svg {
+				transition: fill 0.5s;
+				fill: $orange;
+			}
+		}
+
+		&:hover {
+			background-color: transparent;
+			color: $orange;
+			outline: 2px solid $orange-7;
+			border-radius: 5px;
+
+			.footer__svg {
+				transition: fill 0.5s;
+				fill: $orange;
+			}
+		}
+
+		&:active {
+			background-color: $orange-1;
+			outline-color: transparent;
+			color: $orange;
+
+			.footer__svg {
+				transition: fill 0.5s;
+				fill: $orange;
+			}
+		}
+	}
+
+	&__list-link {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__bottom {
+		background-color: $white;
+		padding: 30px 0;
+		text-align: center;
+		background-color: $silver-2;
+		font-size: 1.4rem;
+		line-height: 1;
+		border-top: 1px solid $grey;
+		position: absolute;
+		right: 0;
+		left: 0;
+	}
+}

@@ -1,0 +1,67 @@
+.social {
+	display: flex;
+
+	&__item {
+		width: 39px;
+		height: 39px;
+
+		&:not(:last-child) {
+			margin-right: 13px;
+		}
+	}
+
+	&__svg {
+		fill: $dark;
+	}
+
+	.social__svg--facebook {
+		width: 9px;
+		height: 21px;
+	}
+
+	.social__svg--twitter {
+		width: 21px;
+		height: 17px;
+	}
+
+	.social__svg--instagram {
+		width: 19.5px;
+		height: 19.5px;
+	}
+
+	&__link {
+		background-color: $silver;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+		transition: all 0.5s;
+
+		&:hover,
+		&:active {
+			.social__svg {
+				transition: fill 0.5s;
+				fill: $white;
+			}
+		}
+
+		&:focus {
+			outline: 2px solid $orange-7;
+			border-radius: 5px;
+			border-radius: 50%;
+			background-color: $orange-1;
+		}
+
+		&:hover {
+			background-color: $orange;
+			outline-color: transparent;
+		}
+
+		&:active {
+			background-color: $orange-7;
+			outline-color: transparent;
+		}
+	}
+}
