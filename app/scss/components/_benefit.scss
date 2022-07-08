@@ -1,0 +1,74 @@
+.benefit {
+	&__container {
+		position: relative;
+	}
+
+	&__wrapper {
+		height: 55vh;
+		max-width: 545px;
+		margin-left: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+	}
+
+	&__wrapper:after {
+		content: "";
+		background-image: url("../images/food-delivery.png");
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-size: contain;
+		width: 440px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 7%;
+	}
+
+	&__title {
+		text-align: left;
+		max-width: 400px;
+		margin-bottom: 38px;
+	}
+
+	&__text {
+		margin-bottom: 30px;
+		max-width: 470px;
+	}
+
+	&__btn {}
+
+	&__item {
+		padding-left: 65px;
+		font-size: 2.4rem;
+		line-height: 1.5;
+		position: relative;
+		margin-bottom: 20px;
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 34px;
+			height: 34px;
+		}
+
+		&:last-child {
+			margin-bottom: 30px;
+		}
+	}
+
+	&__item--watch:before {
+		@include photo("../images/icons/watch.svg");
+	}
+
+	&__item--delivery:before {
+		@include photo("../images/icons/delivery.svg");
+	}
+
+	&__item--shop:before {
+		@include photo("../images/icons/shop.svg");
+	}
+}
