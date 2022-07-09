@@ -26,6 +26,7 @@
 		"mixitup": "^3.3.1"
 	},
 	"dependencies": {
-		"sass": "^1.52.3"
+		"sass": "^1.52.3",
+		"slick-carousel": "^1.8.1"
 	}
 }

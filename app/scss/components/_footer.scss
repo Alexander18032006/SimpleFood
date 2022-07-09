@@ -1,8 +1,10 @@
 .footer {
+	margin-top: -7px;
+
 	&__content {
 		display: flex;
 		padding-bottom: 60px;
-		justify-content: space-between;
+		// justify-content: space-between;
 	}
 
 	&__wrapper {
@@ -11,6 +13,7 @@
 
 	&__list {
 		column-count: 3;
+		margin-right: 40px;
 	}
 
 	&__list-item {

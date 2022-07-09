@@ -1,0 +1,151 @@
+.comment {
+	&__item {
+		display: flex !important;
+		align-items: center;
+		padding: 0 90px;
+	}
+
+	&__img {
+		border-radius: 50%;
+		margin-right: 80px;
+	}
+
+	&__content {
+		font-style: italic;
+		max-width: 570px;
+		position: relative;
+
+		&:after {
+			content: "";
+			width: 25px;
+			height: 20px;
+			position: absolute;
+			top: 0;
+			left: -7%;
+			@include photo("../images/icons/brace.svg")
+		}
+
+		&:before {
+			content: "";
+			width: 25px;
+			height: 20px;
+			position: absolute;
+			bottom: 35%;
+			right: -7%;
+			@include photo("../images/icons/brace.svg");
+			transform: matrix(-1, 0, 0, 1, 0, 0);
+		}
+	}
+
+	&__author {
+		display: block;
+		color: $orange;
+		line-height: 1.3;
+		font-weight: 600;
+		font-style: normal;
+		margin-top: 30px;
+	}
+
+	&__descr {
+		margin-top: 15px;
+		display: block;
+		color: $dark;
+		font-size: 1.4rem;
+		line-height: 1.3;
+		font-weight: 400;
+	}
+}
+
+.slick-dots {
+	display: flex;
+	max-width: 105px;
+	justify-content: space-between;
+	margin: 40px auto 20px;
+
+	button {
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		background-color: $grey;
+		font-size: 0;
+		transition: all 0.5s;
+
+		&:focus {
+			outline: 2px solid $orange;
+		}
+
+		&:hover {
+			outline: 2px solid $orange-7;
+			background-color: $orange-1;
+		}
+
+		&:active {
+			background-color: $orange-7;
+		}
+	}
+}
+
+.slick-active {
+	button {
+		background-color: $orange;
+	}
+}
+
+.slick-arrow {
+	position: absolute;
+	bottom: -15px;
+	font-size: 0;
+	width: 40px;
+	height: 40px;
+	border: 3px solid $grey;
+	border-radius: 50%;
+	transition: all 0.5s;
+
+	&.active {
+		border-color: $orange;
+
+		.slick-arrow__svg {
+			fill: $orange;
+		}
+	}
+
+	&__svg {
+		fill: $grey;
+		width: 23px;
+		height: 23px;
+		stroke-width: 1px;
+		transition: fill 0.5s;
+	}
+
+	&:hover {
+		border-color: $orange-7;
+		background-color: $orange-1;
+
+		.slick-arrow__svg {
+			fill: $orange-7;
+		}
+	}
+
+	&:focus {
+		border-color: $grey;
+		outline: 2px solid $orange;
+	}
+
+	&:active {
+		border-color: transparent;
+		background-color: $orange-1;
+
+		.slick-arrow__svg {
+			fill: $orange;
+		}
+	}
+}
+
+.slick-prev {
+	left: 40.3%;
+}
+
+.slick-next {
+	right: 40.3%;
+	transform: rotate(180deg);
+}

@@ -1,0 +1,27 @@
+.promo {
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__content {
+		max-width: 540px;
+	}
+
+	&__title {
+		text-align: left;
+	}
+
+	&__text {
+		margin-bottom: 30px;
+	}
+
+	&__link {
+		display: inline-block;
+
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+}
