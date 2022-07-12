@@ -4,24 +4,23 @@
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: 30px;
 	}
+}
 
-	&__item {
-		box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
-		border-radius: 10px;
-		background-color: $white;
-		transition: box-shadow 0.5s;
+.restaurant-card {
+	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	background-color: $white;
+	transition: box-shadow 0.5s;
 
-		&:hover {
-			box-shadow: 0px 3px 15px rgba(255, 104, 56, 0.5);
-		}
-	}
-
-	&__img {
-		margin-bottom: 15px;
+	&:hover {
+		box-shadow: 0px 3px 15px rgba(255, 104, 56, 0.5);
 	}
 
 	&__inner {
-		padding: 0 20px 20px;
+		padding: 15px 20px 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 
 	&__title {
@@ -40,18 +39,15 @@
 		font-size: 1.8rem;
 		font-weight: 300;
 		line-height: 1.7;
-		padding-left: 28px;
-		position: relative;
+		display: flex;
+		align-items: center;
 
 		&:before {
 			content: "";
 			@include photo("../images/icons/time.svg");
 			width: 22px;
 			height: 22px;
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			left: 0;
+			margin-right: 10px;
 		}
 	}
 
@@ -61,13 +57,13 @@
 		height: 33px;
 		border-radius: 20px;
 		position: relative;
+		transition: background-color 0.5s, outline 0.5s;
 
 		&:focus {
 			outline: 2px solid $orange;
 			background-color: $orange-1;
-			transition: all 0.5s;
 
-			.restaurant__svg {
+			.restaurant-card__svg {
 				fill: $orange;
 			}
 		}
@@ -75,20 +71,18 @@
 		&:hover {
 			outline: 2px solid $orange;
 			background-color: $white;
-			transition: all 0.5s;
 
-			.restaurant__svg {
+			.restaurant-card__svg {
 				fill: $orange;
 				right: 25%;
 			}
 		}
 
 		&:active {
-			transition: all 0.5s;
 			background-color: $orange-1;
 			outline-color: transparent;
 
-			.restaurant__svg {
+			.restaurant-card__svg {
 				fill: $orange;
 				right: 50%;
 			}
@@ -99,11 +93,11 @@
 		content: "";
 		position: absolute;
 		right: 50%;
-		transform: translate(50%, -50%);
 		top: 50%;
-		transition: all 0.5s;
+		transform: translate(50%, -50%);
 		width: 14px;
 		height: 12px;
 		fill: $white;
+		transition: fill 0.5s, right 0.5s;
 	}
 }

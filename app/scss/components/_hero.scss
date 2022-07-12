@@ -17,7 +17,8 @@
 		text-transform: uppercase;
 		max-width: 449px;
 
-		span {
+		&--accent {
+			display: block;
 			color: $orange;
 		}
 	}

@@ -1,4 +1,6 @@
 .promo {
+	margin-top: -20px;
+
 	&__wrapper {
 		display: flex;
 		justify-content: space-between;
@@ -17,11 +19,30 @@
 		margin-bottom: 30px;
 	}
 
+	&__inner {
+		display: flex;
+	}
+
 	&__link {
-		display: inline-block;
+		height: 40px;
+		@extend %photo;
+		transition: outline 0.5s;
+		border-radius: 5px;
+
+		&:focus {
+			outline: 2px solid $orange-7;
+		}
 
 		&:not(:last-child) {
 			margin-right: 30px;
+		}
+
+		&:first-child {
+			width: 120px;
+		}
+
+		&:nth-child(2) {
+			width: 135px;
 		}
 	}
 }

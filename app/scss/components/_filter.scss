@@ -1,10 +1,9 @@
 .filter {
 	display: flex;
 	margin-bottom: 35px;
-
-	&__item:not(:last-child) {
-		margin-right: 20px;
-	}
+	flex-wrap: wrap;
+	gap: 25px;
+	justify-content: center;
 
 	&__svg {
 		margin-right: 10px;

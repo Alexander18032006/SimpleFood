@@ -1,29 +1,21 @@
 .benefit {
 	&__container {
-		position: relative;
+		background-image: url("../images/food-delivery.png");
+		background-repeat: no-repeat;
+		background-position: left 11% center;
+		background-size: contain;
 	}
 
 	&__wrapper {
-		height: 55vh;
+		height: auto;
 		max-width: 545px;
 		margin-left: auto;
+		// Использовал Flex чтобы выровнять вертикально по центру весь контент в этом блоке. Как и на макете
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: flex-start;
-	}
-
-	&__wrapper:after {
-		content: "";
-		background-image: url("../images/food-delivery.png");
-		background-repeat: no-repeat;
-		background-position: left center;
-		background-size: contain;
-		width: 440px;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 7%;
+		padding: 57px 0;
 	}
 
 	&__title {
@@ -34,41 +26,40 @@
 
 	&__text {
 		margin-bottom: 30px;
-		max-width: 470px;
+		padding-right: 75px;
 	}
 
-	&__btn {}
+	&__list {
+		margin-bottom: 30px;
+	}
 
 	&__item {
-		padding-left: 65px;
 		font-size: 2.4rem;
 		line-height: 1.5;
-		position: relative;
-		margin-bottom: 20px;
+		display: flex;
+		align-items: center;
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
 
 		&:before {
 			content: "";
-			position: absolute;
-			left: 0;
-			top: 0;
+			margin-right: 34px;
 			width: 34px;
 			height: 34px;
 		}
 
-		&:last-child {
-			margin-bottom: 30px;
+		&--watch:before {
+			@include photo("../images/icons/watch.svg");
 		}
-	}
 
-	&__item--watch:before {
-		@include photo("../images/icons/watch.svg");
-	}
+		&--delivery:before {
+			@include photo("../images/icons/delivery.svg");
+		}
 
-	&__item--delivery:before {
-		@include photo("../images/icons/delivery.svg");
-	}
-
-	&__item--shop:before {
-		@include photo("../images/icons/shop.svg");
+		&--shop:before {
+			@include photo("../images/icons/shop.svg")
+		}
 	}
 }

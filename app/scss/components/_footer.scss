@@ -104,6 +104,10 @@
 		}
 	}
 
+	&__list-item {
+		max-width: 200px;
+	}
+
 	&__list-link {
 		&:not(:last-child) {
 			margin-bottom: 20px;
