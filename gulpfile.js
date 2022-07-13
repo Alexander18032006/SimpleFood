@@ -32,7 +32,7 @@ const htmlInclude = () => {
 
 function style() {
 	return src('app/scss/style.scss')
-		.pipe(scss({ outputStyle: 'expanded' }).on('error', scss.logError))
+		.pipe(scss({ outputStyle: 'compressed' }).on('error', scss.logError))
 		.on('error', notify.onError({
 			title: 'Scss error'
 		}))
@@ -113,7 +113,7 @@ function watching() {
 	watch(['app/scss/**/*.scss'], style);
 	watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
 	watch(['app/**/*.html']).on('change', browserSync.reload);
-	watch(['app/images/icons-2/*.svg'], svgSprites);
+	watch(['app/images/icons/*.svg'], svgSprites);
 }
 
 exports.htmlInclude = htmlInclude;
