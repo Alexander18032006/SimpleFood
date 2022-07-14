@@ -7,14 +7,8 @@
 	}
 
 	&__wrapper {
-		height: auto;
 		max-width: 545px;
 		margin-left: auto;
-		// Использовал Flex чтобы выровнять вертикально по центру весь контент в этом блоке. Как и на макете
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: flex-start;
 		padding: 57px 0;
 	}
 

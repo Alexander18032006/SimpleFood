@@ -74,7 +74,6 @@ svg {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	justify-content: space-between;
 	height: 100%;
 	background-color: $white;
 	border: 1px solid $silver;
@@ -86,8 +85,19 @@ svg {
 		border-color: $orange;
 	}
 
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 112px;
+	}
+
 	&__link {
 		padding: 20px 0 7px;
+	}
+
+	&__img {
+		margin-bottom: 10px;
 	}
 
 	&__title {
@@ -97,15 +107,16 @@ svg {
 	}
 
 	&__price {
+		display: block;
 		font-size: 1.5rem;
 		line-height: 1.4;
 		font-weight: 600;
+		margin-bottom: 10px;
 	}
 
 	&__btn {
 		padding: 7px 16px;
 		font-size: 1.4rem;
-		margin-bottom: 20px;
 	}
 }
 
