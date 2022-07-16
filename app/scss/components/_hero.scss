@@ -28,8 +28,19 @@
 		max-width: 450px;
 	}
 
+	&__inner {
+		max-width: 600px;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		row-gap: 40px;
+	}
+
 	&__button {
-		margin-left: 34px;
+		margin-right: 34px;
+	}
+
+	&__link {
 		text-decoration: underline;
 		line-height: 4px;
 		transition: all 0.5s;

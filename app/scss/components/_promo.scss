@@ -21,6 +21,8 @@
 
 	&__inner {
 		display: flex;
+		flex-wrap: wrap;
+		gap: 15px 30px;
 	}
 
 	&__link {
@@ -31,18 +33,6 @@
 
 		&:focus {
 			outline: 2px solid $orange-7;
-		}
-
-		&:not(:last-child) {
-			margin-right: 30px;
-		}
-
-		&:first-child {
-			width: 120px;
-		}
-
-		&:nth-child(2) {
-			width: 135px;
 		}
 	}
 }
