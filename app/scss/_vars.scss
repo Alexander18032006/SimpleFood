@@ -1,3 +1,4 @@
+@use "sass:map";
 $orange: #FF6838;
 $orange-7: #ff6738b3;
 $orange-1: #ff67381a;
@@ -18,4 +19,17 @@ $silver-2: #F9FAFF;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+}
+
+$breakpoints: (
+	phone: 560px,
+	tablet: 768px,
+	tablet-2: 992px,
+	desktop: 1230px
+);
+
+@mixin media($breakpoint) {
+	@media(max-width:map.get($breakpoints, $breakpoint)) {
+		@content
+	}
 }

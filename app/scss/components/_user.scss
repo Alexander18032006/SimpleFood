@@ -1,9 +1,17 @@
 .user-nav {
 	display: flex;
 
+	@include media('tablet') {
+		margin-right: 20px;
+	}
+
 	&__item {
 		&:not(:last-child) {
 			margin-right: 10px;
+
+			@include media('phone') {
+				margin-right: 5px;
+			}
 		}
 	}
 
@@ -12,6 +20,11 @@
 		stroke: $dark;
 		width: 19px;
 		height: 19px;
+
+		@include media('phone') {
+			width: 15px;
+			height: 15px;
+		}
 	}
 
 	&__btn {
@@ -55,6 +68,10 @@
 				color: $white;
 			}
 		}
+
+		@include media('phone') {
+			padding: 5px;
+		}
 	}
 
 	&__btn--cart {
@@ -73,5 +90,10 @@
 		border-radius: 50%;
 		line-height: 1.55;
 		color: $white;
+
+		@include media('phone') {
+			top: -3px;
+			right: -2px;
+		}
 	}
 }

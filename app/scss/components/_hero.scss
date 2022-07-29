@@ -1,12 +1,37 @@
 .hero {
 	&__wrapper {
 		height: 61vh;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: right center;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		position: relative;
+
+		&:after {
+			content: "";
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+			background-image: url('../images/hero.png');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: right center;
+			z-index: -1;
+
+			@include media('tablet-2') {
+				opacity: 0.6;
+			}
+
+			@include media('phone') {
+				opacity: 0.2;
+				height: 50vh;
+			}
+
+			@media (max-width: map.get($breakpoints, "tablet-2")) and (orientation: landscape) {
+				opacity: 1;
+			}
+		}
 	}
 
 	&__title {
@@ -16,6 +41,16 @@
 		margin-bottom: 20px;
 		text-transform: uppercase;
 		max-width: 449px;
+		opacity: 1;
+
+		@include media('phone') {
+			font-size: 4rem;
+		}
+
+		@media (max-width: map.get($breakpoints, "tablet-2")) and (orientation: landscape) {
+			font-size: 2.4rem;
+			margin-bottom: 7px;
+		}
 
 		&--accent {
 			display: block;
@@ -26,6 +61,16 @@
 	&__text {
 		margin-bottom: 20px;
 		max-width: 450px;
+
+		@include media('phone') {
+			font-size: 1.6rem;
+			max-width: 350px;
+		}
+
+		@media (max-width: map.get($breakpoints, "tablet-2")) and (orientation: landscape) {
+			font-size: 1.4rem;
+			max-width: 400px;
+		}
 	}
 
 	&__inner {
@@ -60,10 +105,13 @@
 			outline-color: transparent;
 			text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
 		}
-	}
 
-	&__img {
-		max-width: 560px;
-		max-height: 660px;
+		@include media('phone') {
+			font-size: 1.6rem;
+		}
+
+		@media (max-width: map.get($breakpoints, "tablet-2")) and (orientation: landscape) {
+			font-size: 1.4rem;
+		}
 	}
 }

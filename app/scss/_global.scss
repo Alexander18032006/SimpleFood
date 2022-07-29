@@ -1,5 +1,6 @@
 body {
 	background-color: $silver-2;
+	// background-color: aquamarine;
 	color: $dark;
 	font-family: 'Rubik', sans-serif;
 	display: flex;
@@ -8,6 +9,11 @@ body {
 	font-size: 2rem;
 	line-height: 1.5;
 	font-style: normal;
+	transition: background-color 0.3s;
+
+	&.active {
+		background-color: rgba($dark, 0.7);
+	}
 }
 
 svg {
@@ -67,6 +73,15 @@ svg {
 		background-color: $orange-1;
 		color: $orange;
 		outline-color: transparent;
+	}
+
+	@include media('phone') {
+		padding: 8px 24px;
+	}
+
+	@media (max-width: map.get($breakpoints, "tablet-2")) and (orientation: landscape) {
+		padding: 5px 15px;
+		font-size: 1.4rem;
 	}
 }
 
