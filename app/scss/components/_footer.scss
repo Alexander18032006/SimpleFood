@@ -4,19 +4,50 @@
 	&__content {
 		display: flex;
 		padding-bottom: 60px;
-		// justify-content: space-between;
+
+		@include media('tablet-2') {
+			flex-wrap: wrap;
+			justify-content: center;
+			row-gap: 30px;
+		}
+
+		@include media('phone') {
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			padding-bottom: 30px;
+		}
 	}
 
 	&__wrapper {
 		margin-right: 70px;
+
+		@include media('tablet-2') {
+			order: 1;
+		}
 	}
 
 	&__list {
 		column-count: 3;
 		margin-right: 40px;
+
+		@include media('tablet-2') {
+			column-count: 4;
+			margin-right: 0;
+			order: 3;
+		}
+
+		@include media('tablet') {
+			column-count: 3;
+		}
+
+		@include media('phone') {
+			column-count: 1;
+		}
 	}
 
 	&__list-item {
+		max-width: 200px;
 		margin-bottom: 15px;
 	}
 
@@ -102,10 +133,6 @@
 				fill: $orange;
 			}
 		}
-	}
-
-	&__list-item {
-		max-width: 200px;
 	}
 
 	&__list-link {

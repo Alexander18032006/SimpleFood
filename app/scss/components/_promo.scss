@@ -5,10 +5,28 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
+		@include media('tablet-2') {
+			flex-direction: column;
+			row-gap: 30px;
+		}
+
+		@include media('phone') {
+			align-items: flex-start;
+		}
 	}
 
 	&__content {
 		max-width: 540px;
+
+		@include media('tablet-2') {
+			order: 2;
+			max-width: 570px;
+		}
+
+		@include media('phone') {
+			max-width: 400px;
+		}
 	}
 
 	&__title {
@@ -17,6 +35,12 @@
 
 	&__text {
 		margin-bottom: 30px;
+	}
+
+	&__img {
+		@include media('phone') {
+			display: none;
+		}
 	}
 
 	&__inner {

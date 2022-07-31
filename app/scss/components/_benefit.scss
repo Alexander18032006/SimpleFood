@@ -1,15 +1,40 @@
 .benefit {
 	&__container {
-		background-image: url("../images/food-delivery.png");
-		background-repeat: no-repeat;
-		background-position: left 11% center;
-		background-size: 37%;
+		position: relative;
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-size: 37%;
+			background-image: url("../images/food-delivery.png");
+			background-repeat: no-repeat;
+			background-position: left 11% center;
+			z-index: -1;
+
+			@include media('tablet-2') {
+				opacity: 0.4;
+				background-size: 45%;
+			}
+
+			@include media('tablet') {
+				opacity: 0.2;
+				background-size: 57%;
+			}
+		}
 	}
 
 	&__wrapper {
 		max-width: 545px;
 		margin-left: auto;
 		padding: 57px 0;
+
+		@include media('phone') {
+			padding: 0 0 35px;
+		}
 	}
 
 	&__title {
@@ -21,6 +46,10 @@
 	&__text {
 		margin-bottom: 30px;
 		padding-right: 75px;
+
+		@include media('phone') {
+			padding-right: 0;
+		}
 	}
 
 	&__list {
@@ -42,6 +71,10 @@
 			margin-right: 34px;
 			width: 34px;
 			height: 34px;
+
+			@include media('phone') {
+				margin-right: 10px;
+			}
 		}
 
 		&--watch:before {
@@ -54,6 +87,10 @@
 
 		&--shop:before {
 			@include photo("../images/icons/shop.svg")
+		}
+
+		@include media('phone') {
+			font-size: 1.8rem;
 		}
 	}
 }
