@@ -24,6 +24,10 @@
 			display: flex;
 			gap: 25px;
 		}
+
+		.slick-slide {
+			width: auto !important;
+		}
 	}
 }
 
