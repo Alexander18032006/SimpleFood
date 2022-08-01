@@ -2,8 +2,28 @@
 	&__list {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		// grid-template-rows: auto au;
 		grid-gap: 30px;
+
+		@include media('desktop') {
+			grid-gap: 15px;
+		}
+
+		@include media('tablet-2') {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@include media('tablet') {
+			grid-template-columns: 1fr;
+		}
+
+		.slick-dots {
+			margin: 0 auto;
+		}
+
+		.slick-track {
+			display: flex;
+			gap: 25px;
+		}
 	}
 }
 
@@ -23,6 +43,10 @@
 
 	&__img {
 		margin-bottom: 15px;
+
+		@include media('tablet-2') {
+			width: 100%;
+		}
 	}
 
 	&__title {

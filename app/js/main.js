@@ -10,7 +10,16 @@ $(function () {
 		$('.filter').slick({
 			arrows: false,
 			slidesToShow: 2,
-			slidesToScroll: 3,
+			slidesToScroll: 2,
+			infinite: true,
+		}
+		);
+		$('.restaurant__list').slick({
+			arrows: false,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			infinite: true,
+			dots: true
 		}
 		);
 	}
